@@ -66,11 +66,24 @@ set tabstop=2
 set expandtab
 
 " Auto indent pasted text
-nnoremap p p=`]<C-o>
-nnoremap P P=`]<C-o>
+"nnoremap p p=`]<C-o>
+"nnoremap P P=`]<C-o>
 
-filetype plugin on
-filetype indent on
+set nocompatible
+filetype off
+
+call pathogen#infect()
+call pathogen#helptags()
+
+filetype plugin indent on
+syntax on
+let g:solarized_termcolors=256
+set t_Co=256 
+set background=dark
+colorscheme solarized
+
+"filetype plugin on
+"filetype indent on
 
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
